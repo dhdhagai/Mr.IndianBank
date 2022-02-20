@@ -1,4 +1,5 @@
 var express = require("express");
+require("dotenv").config()
 var app = express();
 var bodyParser = require("body-parser");
 let verifresponse;
@@ -17,8 +18,8 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
   service: 'Gmail',
   auth: {
-    user: 'dhdhagai.pws@gmail.com',
-    pass: 'Ismoman@967467',
+    user: process.env.UNAME,
+    pass: process.env.PASS,
   },
 });
 function send(reciever, code) {
@@ -35,7 +36,7 @@ transporter.sendMail({
 }
 // Connection URI
 const uri =
-  "mongodb+srv://dhdhagai:dhagai@cluster0.ifxzk.mongodb.net/Bal?retryWrites=true&w=majority";
+  `mongodb+srv://dhdhagai:${process.env.MONGOPASS}@cluster0.ifxzk.mongodb.net/Bal?retryWrites=true&w=majority`;
 // Create a new MongoClient
 const client = new MongoClient(uri);
 
