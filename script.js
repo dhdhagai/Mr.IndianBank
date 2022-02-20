@@ -108,8 +108,8 @@ app.post("/verify",urlencodedParser, (req,res) => {
   }
 })
 app.get("/with")
-var server = app.listen(8000, function () {
+var server = app.listen(process.env.PORT || 80, function () {
   var host = server.address().address;
-  var port = 8000
+  var port = 80
   console.log("app listening at http://localhost:",port);
 });
