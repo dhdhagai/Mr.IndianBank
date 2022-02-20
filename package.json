@@ -18,5 +18,8 @@
     "nodemailer": "^6.7.2",
     "smtp": "^0.1.4",
     "smtp-client": "^0.4.0"
-  }
+  },
+  "engines": {
+    "node": "16.14.0"
+    }
 }
