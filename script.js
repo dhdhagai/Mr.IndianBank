@@ -75,9 +75,12 @@ const client = new MongoClient(uri);
   }
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 app.use(express.static("public"));
-app.get("/index.html", function (req, res) {
+app.get("/", function (req, res) {
   res.sendFile(__dirname + "/" + "index.html");
 });
+app.get("/favicon.ico", (req,res) => {
+  res.sendFile(__dirname + '/favicon.ico')
+})
 app.post("/process_post", urlencodedParser, function (req, res) {
 resamt = {
     bal: req.body.bal,
