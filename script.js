@@ -16,7 +16,7 @@ function getcode(max) {
 }
 const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
-  service: 'Gmail',
+  service: 'Outlook',
   auth: {
     user: process.env.UNAME,
     pass: process.env.PASS,
