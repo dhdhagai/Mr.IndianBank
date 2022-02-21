@@ -16,7 +16,9 @@ function getcode(max) {
 }
 const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
-  service: 'Outlook',
+  host: "smtp-mail.outlook.com", // hostname
+  secureConnection: false, // use SSL
+  port: 587, // port for secure SMTP
   auth: {
     user: process.env.UNAME,
     pass: process.env.PASS,
@@ -25,7 +27,7 @@ const transporter = nodemailer.createTransport({
 function send(reciever, code) {
  
 transporter.sendMail({
-    from: '"Le Mr India Bank" <youremail@gmail.com>', // sender address
+    from: '"Le Mr India Bank" <pdv.pl.you.dhagai@outlook.com>', // sender address
     to: `${reciever}`, // list of receivers
     subject: "Verify Your Le Mr.India Bank account", // Subject line
 
